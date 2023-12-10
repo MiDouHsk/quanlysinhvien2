@@ -1,9 +1,10 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quanlysinhvien/model/profile.dart';
-import 'package:quanlysinhvien/ui/page_dklop.dart';
-import 'package:quanlysinhvien/ui/page_login.dart';
+import 'package:quanly_sinhvien_2/model/profile.dart';
+import 'package:quanly_sinhvien_2/ui/customcontroller.dart';
+import 'package:quanly_sinhvien_2/ui/page_dklop.dart';
+import 'package:quanly_sinhvien_2/ui/page_login.dart';
 
 import '../providers/mainviewmodel.dart';
 import '../providers/menubarviewmodel.dart';
@@ -37,7 +38,7 @@ class PageMain extends StatelessWidget {
     if (profile.token == "") {
       return PageLogin();
     }
-    if (profile.student.mssv != "") {
+    if (profile.student.mssv == "" || profile.user.first_name == "") {
       return pageDangKyLop();
     }
 
@@ -150,10 +151,13 @@ class MenuItemlist extends StatelessWidget {
                 child: SizedBox(
                   height: size.height * .16,
                   width: size.height * .16,
-                  child: Image(
-                    image: AssetImage(
-                        'assets/image/a49cc95673f4ebf3a4263ab933f51c22_5393919961047654631.gif'),
-                    fit: BoxFit.cover,
+                  // child: Image(
+                  //   image: AssetImage(
+                  //       'assets/image/a49cc95673f4ebf3a4263ab933f51c22_5393919961047654631.gif'),
+                  //   fit: BoxFit.cover,
+                  // ),
+                  child: CustomAvatar1(
+                    size: size,
                   ),
                 ),
               ),

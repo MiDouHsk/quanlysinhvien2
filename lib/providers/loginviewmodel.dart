@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:quanlysinhvien/model/student.dart';
-import 'package:quanlysinhvien/model/user.dart';
-import 'package:quanlysinhvien/repositories/login_repository.dart';
-import 'package:quanlysinhvien/repositories/student_repository.dart';
-import 'package:quanlysinhvien/repositories/user_repository.dart';
+import 'package:quanly_sinhvien_2/model/student.dart';
+import 'package:quanly_sinhvien_2/repositories/login_repository.dart';
+import 'package:quanly_sinhvien_2/repositories/student_repository.dart';
+import 'package:quanly_sinhvien_2/repositories/user_repository.dart';
+
+import '../model/user.dart';
 
 class LoginViewModel with ChangeNotifier {
   String errorMessage = "";
-  int status = 0; // 0: not login, 1"waitings, 2:error, 3:already logged.
+  int status = 0; // 0: not login, 1: waitings, 2: error, 3: already logged.
   LoginRepository loginRepo = LoginRepository();
   Future<void> login(String username, String password) async {
     status = 1;

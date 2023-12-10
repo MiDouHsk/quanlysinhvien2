@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quanlysinhvien/repositories/register_repository.dart';
+import 'package:quanly_sinhvien_2/repositories/register_repository.dart';
 
 class RegisterViewModel with ChangeNotifier {
   int status = 0;

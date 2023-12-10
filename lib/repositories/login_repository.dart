@@ -1,5 +1,5 @@
-import 'package:quanlysinhvien/model/profile.dart';
-import 'package:quanlysinhvien/services/api_service.dart';
+import 'package:quanly_sinhvien_2/model/profile.dart';
+import 'package:quanly_sinhvien_2/services/api_service.dart';
 
 class LoginRepository {
   final ApiService api = ApiService();

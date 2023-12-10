@@ -14,10 +14,10 @@ class Student {
       this.duyet = 0});
   factory Student.fromJson(Map<String, dynamic> json) {
     return Student(
-        idUser: json['idUser'],
+        idUser: json['iduser'],
         mssv: json['mssv'],
         idlop: json['idlop'],
-        tenlop: json['tenlop'],
+        tenlop: json['lop'],
         diem: json['diem'],
         duyet: json['duyet']);
   }

@@ -20,7 +20,7 @@ class Profile {
 
   Future<void> SetUsernamePassword(String username, String password) async {
     _pref.setString("username", username);
-    _pref.setString("Password", password);
+    _pref.setString("password", password);
   }
 
   String get username => _pref.getString('username') ?? '';

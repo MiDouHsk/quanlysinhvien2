@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quanlysinhvien/model/profile.dart';
-import 'package:quanlysinhvien/providers/registerviewmodel.dart';
-import 'package:quanlysinhvien/ui/AppConstant.dart';
-import 'package:quanlysinhvien/ui/page_login.dart';
+import 'package:quanly_sinhvien_2/model/profile.dart';
+import 'package:quanly_sinhvien_2/providers/registerviewmodel.dart';
+import 'package:quanly_sinhvien_2/ui/AppConstant.dart';
+import 'package:quanly_sinhvien_2/ui/page_login.dart';
 
 import 'customcontroller.dart';
 import 'page_main.dart';

@@ -1,5 +1,9 @@
-import 'package:quanlysinhvien/model/user.dart';
-import 'package:quanlysinhvien/services/api_service.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'package:quanly_sinhvien_2/model/user.dart';
+import 'package:quanly_sinhvien_2/services/api_service.dart';
+
+import 'package:image/image.dart' as img;
 
 class UserRepository {
   Future<User> getUserInfo() async {
@@ -10,5 +14,39 @@ class UserRepository {
       user = User.fromJson(json);
     }
     return user;
+  }
+
+  Future<bool> updateProfile() async {
+    bool kq = false;
+    var response = await ApiService().updateProfile();
+    if (response != null) {
+      kq = true;
+    }
+    return kq;
+  }
+
+  Future<void> uploadAvatar(XFile image) async {
+    ApiService api = ApiService();
+
+    if (image != null) {
+      final File imageFile = File(image.path);
+      if (imageFile.existsSync()) {
+        // Đọc ảnh gốc từ tệp
+        final img.Image originalImage =
+            img.decodeImage(imageFile.readAsBytesSync())!;
+
+        // Kiểm tra và giảm kích thước ảnh nếu cần
+        final img.Image resizedImage =
+            img.copyResize(originalImage, width: 300);
+
+        // Tạo tệp mới cho ảnh đã giảm kích thước
+        final File resizedFile =
+            File(imageFile.path.replaceAll('.jpg', '_resized.jpg'));
+        resizedFile.writeAsBytesSync(img.encodeJpg(resizedImage));
+
+        // Tải ảnh đã giảm kích thước lên máy chủ
+        await api.uploadAvatarToServer(resizedFile);
+      }
+    }
   }
 }

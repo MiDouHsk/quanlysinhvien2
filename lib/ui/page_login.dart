@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quanlysinhvien/ui/AppConstant.dart';
-import 'package:quanlysinhvien/ui/page_forgot.dart';
-import 'package:quanlysinhvien/ui/page_register.dart';
+import 'package:quanly_sinhvien_2/ui/AppConstant.dart';
+import 'package:quanly_sinhvien_2/ui/page_Forgot.dart';
+import 'package:quanly_sinhvien_2/ui/page_register.dart';
 import '../providers/loginviewmodel.dart';
 import '../services/api_service.dart';
 import 'customcontroller.dart';
@@ -47,10 +47,10 @@ class PageLogin extends StatelessWidget {
     }
     return Scaffold(
       backgroundColor: AppConstant.backgroundcolor,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        // title: Text("Home_Page",style: TextStyle(),),
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   // title: Text("Home_Page",style: TextStyle(),),
+      // ),
       body: SingleChildScrollView(
         child: Stack(
           children: [

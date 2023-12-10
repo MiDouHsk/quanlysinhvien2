@@ -1,9 +1,17 @@
-import 'package:quanlysinhvien/model/profile.dart';
-import 'package:quanlysinhvien/model/student.dart';
-import 'package:quanlysinhvien/services/api_service.dart';
+import 'package:quanly_sinhvien_2/model/student.dart';
+import 'package:quanly_sinhvien_2/services/api_service.dart';
 
 class StudentRepository {
   final ApiService api = ApiService();
+  Future<bool> dangkylop() async {
+    bool kq = false;
+    var response = await api.dangkiLop();
+    if (response != null) {
+      kq = true;
+    }
+    return kq;
+  }
+
   Future<Student> getStudentInfo() async {
     Student student = Student();
     var response = await api.getStudentInfo();

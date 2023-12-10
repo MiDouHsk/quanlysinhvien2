@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class AppConstant {
   static Color appbarcolor = Colors.grey;
@@ -35,4 +36,31 @@ class AppConstant {
     color: Colors.grey,
     fontSize: 20,
   );
+
+  static TextStyle textbodywhite = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+  );
+
+  static TextStyle textbodywhitebold = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle textbodyfocuswhite = const TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+  );
+
+  static bool isDate(String str) {
+    try {
+      var intputFormat = DateFormat('dd/MM/yyyy');
+      var date1 = intputFormat.parseStrict(str);
+      return true;
+    } catch (e) {
+      print('--- Đã có lỗi sảy ra ---');
+      return false;
+    }
+  }
 }
