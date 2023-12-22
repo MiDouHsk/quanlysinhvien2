@@ -48,13 +48,6 @@ class PageRegister extends StatelessWidget {
             Icons.arrow_back,
           ),
         ),
-        // title: viewmodel.status == 2
-        //     ? Text(
-        //         viewmodel.errorMessage,
-        //         style: TextStyle(color: Colors.white),
-        //       )
-        //     : Text(""),
-        // centerTitle: true,
       ),
       body: SafeArea(
           child: Center(

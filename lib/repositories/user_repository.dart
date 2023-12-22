@@ -31,20 +31,14 @@ class UserRepository {
     if (image != null) {
       final File imageFile = File(image.path);
       if (imageFile.existsSync()) {
-        // Đọc ảnh gốc từ tệp
         final img.Image originalImage =
             img.decodeImage(imageFile.readAsBytesSync())!;
 
-        // Kiểm tra và giảm kích thước ảnh nếu cần
         final img.Image resizedImage =
             img.copyResize(originalImage, width: 300);
-
-        // Tạo tệp mới cho ảnh đã giảm kích thước
         final File resizedFile =
             File(imageFile.path.replaceAll('.jpg', '_resized.jpg'));
         resizedFile.writeAsBytesSync(img.encodeJpg(resizedImage));
-
-        // Tải ảnh đã giảm kích thước lên máy chủ
         await api.uploadAvatarToServer(resizedFile);
       }
     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quanly_sinhvien_2/model/profile.dart';
 import 'package:quanly_sinhvien_2/model/student.dart';
 import 'package:quanly_sinhvien_2/repositories/login_repository.dart';
 import 'package:quanly_sinhvien_2/repositories/student_repository.dart';
@@ -28,5 +29,22 @@ class LoginViewModel with ChangeNotifier {
       }
       notifyListeners();
     } catch (e) {}
+  }
+}
+
+class LogoutViewModel with ChangeNotifier {
+  String errorMessage = "";
+  int status = 0; // 0: not login, 1: waitings, 2: error, 3: already logged.
+  LoginRepository loginRepo = LoginRepository();
+  Future<void> login(String username, String password) async {
+    status = 1;
+    notifyListeners();
+    void logout() {
+      Profile profile = Profile();
+      profile.token = "";
+      profile.user = User();
+
+      notifyListeners();
+    }
   }
 }

@@ -2,6 +2,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quanly_sinhvien_2/model/profile.dart';
+import 'package:quanly_sinhvien_2/providers/loginviewmodel.dart';
 import 'package:quanly_sinhvien_2/ui/customcontroller.dart';
 import 'package:quanly_sinhvien_2/ui/page_dklop.dart';
 import 'package:quanly_sinhvien_2/ui/page_login.dart';
@@ -38,7 +39,7 @@ class PageMain extends StatelessWidget {
     if (profile.token == "") {
       return PageLogin();
     }
-    if (profile.student.mssv == "" || profile.user.first_name == "") {
+    if (profile.student.mssv != "" || profile.user.first_name == "") {
       return pageDangKyLop();
     }
 
@@ -68,6 +69,13 @@ class PageMain extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        // actions: [
+        //   IconButton(
+        //     icon: Icon(Icons.logout),
+        //     onPressed: () {
+        //       Provider.of<LogoutViewModel>(context, listen: false).logout();
+        //       Navigator.pushReplacementNamed(context, PageLogin.routename);
+        // ],
       ),
       body: SafeArea(
           child: Stack(

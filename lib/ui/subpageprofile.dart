@@ -136,7 +136,7 @@ class SubPageProfile extends StatelessWidget {
                                 viewmodel.displayspinner();
                                 profile.user.wardid = outputId;
                                 profile.user.wardname = outputName;
-                                await dcmodel.setCity(outputId);
+                                await dcmodel.setWard(outputId);
                                 viewmodel.setModified();
                                 viewmodel.hidespinner();
                               },

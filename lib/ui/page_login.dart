@@ -123,16 +123,6 @@ class PageLogin extends StatelessWidget {
                         labelText: "Password",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.lock_open),
-                        // suffixIcon: InkWell(
-                        //   onTap: () {
-                        //     setState(() {
-                        //       passToggle = !passToggle;
-                        //     });
-                        //   },
-                        //   child: Icon(passToggle
-                        //       ? Icons.visibility
-                        //       : Icons.visibility_off),
-                        // ),
                       ),
                     ),
                   ),
